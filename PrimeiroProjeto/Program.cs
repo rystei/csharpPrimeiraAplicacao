@@ -3,7 +3,7 @@
 
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound! O seu app de streaming de música";
 
-void ExibirMensagemDeBoasVindas()
+void ExibirLogo()
 {
     Console.WriteLine(@"
 ░██████╗░█████╗░██████╗░███████╗███╗░░░███╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -18,6 +18,7 @@ void ExibirMensagemDeBoasVindas()
 
 void ExibirOpcoesDoMenu()
 {
+    ExibirLogo();
     Console.WriteLine("\nMenu Principal:");
     Console.WriteLine("1. Registrar uma banda");
     Console.WriteLine("2. Exibir todas as bandas");
@@ -31,8 +32,8 @@ void ExibirOpcoesDoMenu()
 
     switch (opcaoEscolhidaNumerica)
     {
-        case 1: 
-            Console.WriteLine("Opção escolhida foi a " + opcaoEscolhidaNumerica);
+        case 1:
+            RegistarBanda();
             break;
         case 2: 
             Console.WriteLine("Opção escolhida foi a " + opcaoEscolhidaNumerica);
@@ -51,7 +52,18 @@ void ExibirOpcoesDoMenu()
     }
 }
 
-ExibirMensagemDeBoasVindas();
+void RegistarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("Registro de bandas:");
+    Console.Write("Digite o nome da banda para registrar: ");
+    String nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda registrada foi: {nomeDaBanda} ");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+
 ExibirOpcoesDoMenu();
 
 
