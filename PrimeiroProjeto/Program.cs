@@ -2,6 +2,7 @@
 //teste
 
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound! O seu app de streaming de música";
+List<String> listaDeBandas = new List<string>();
 
 void ExibirLogo()
 {
@@ -59,6 +60,7 @@ void RegistarBanda()
     Console.Write("Digite o nome da banda para registrar: ");
     String nomeDaBanda = Console.ReadLine()!;
     Console.WriteLine($"A banda registrada foi: {nomeDaBanda} ");
+    listaDeBandas.Add(nomeDaBanda);
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpcoesDoMenu();
