@@ -2,7 +2,8 @@
 //teste
 
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound! O seu app de streaming de música";
-List<String> listaDeBandas = new List<string>();
+List<String> listaDeBandas = new List<string> { "Skillet", "Beatles" };
+
 
 void ExibirLogo()
 {
@@ -36,8 +37,8 @@ void ExibirOpcoesDoMenu()
         case 1:
             RegistarBanda();
             break;
-        case 2: 
-            Console.WriteLine("Opção escolhida foi a " + opcaoEscolhidaNumerica);
+        case 2:
+            MostrarBandasRegistradas();
             break;
         case 3:
             Console.WriteLine("Opção escolhida foi a " + opcaoEscolhidaNumerica);
@@ -62,6 +63,22 @@ void RegistarBanda()
     Console.WriteLine($"A banda registrada foi: {nomeDaBanda} ");
     listaDeBandas.Add(nomeDaBanda);
     Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+
+void MostrarBandasRegistradas()
+{
+    Console.Clear();
+    Console.WriteLine("*************************************");
+    Console.WriteLine("Exibindo todas as bandas Registradas");
+    Console.WriteLine("*************************************\n");
+    foreach (var item in listaDeBandas)
+    {
+        Console.WriteLine($"Banda: {item}");
+    }
+    Console.WriteLine("\nDigite uma tecla para sair");
+    Console.ReadKey();
     Console.Clear();
     ExibirOpcoesDoMenu();
 }
