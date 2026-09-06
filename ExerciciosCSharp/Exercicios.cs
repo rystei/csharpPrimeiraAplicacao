@@ -12,6 +12,7 @@
     Console.WriteLine($"subtração {subtracao} ");
     Console.WriteLine($"multiplicação {multiplicacao} ");
     Console.WriteLine($"divisão {divisao} ");
+    Console.WriteLine("\n fim do programa");
 }
 
 ExibirOperacoes();
