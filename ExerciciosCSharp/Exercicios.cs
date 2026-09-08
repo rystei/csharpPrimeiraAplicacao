@@ -1,18 +1,13 @@
-﻿void ExibirOperacoes()
+﻿void somaValores()
 {
-    float a = 3.15f;
-    float b = 4.50f;
+    List<int> valores = new List<int>() { 10, 20, 30 };
+    int total = 0;
 
-    float soma = a + b;
-    float subtracao = a - b;
-    float multiplicacao = a * b;
-    float divisao = a / b;
-
-    Console.WriteLine($"Soma {soma} ");
-    Console.WriteLine($"subtração {subtracao} ");
-    Console.WriteLine($"multiplicação {multiplicacao} ");
-    Console.WriteLine($"divisão {divisao} ");
-    Console.WriteLine("\n fim do programa");
+    foreach (var item in valores)
+    {
+        total += item ;
+    }
+    Console.WriteLine(total);
 }
 
-ExibirOperacoes();
+somaValores();
