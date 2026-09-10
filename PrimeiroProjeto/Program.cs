@@ -2,7 +2,11 @@
 //teste
 
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound! O seu app de streaming de música";
-List<String> listaDeBandas = new List<string> { "Skillet", "Beatles" };
+//List<String> listaDeBandas = new List<string> { "Skillet", "Beatles" };
+
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+bandasRegistradas.Add("sky", new List<int> { 10, 8, 9 });
+bandasRegistradas.Add("AC/DC", new List<int>());
 
 
 void ExibirLogo()
@@ -49,7 +53,8 @@ void ExibirOpcoesDoMenu()
         case 5:
             Console.WriteLine("Opção escolhida foi a " + opcaoEscolhidaNumerica);
             break;
-        default : Console.WriteLine("Opção inválida, digite novamente");
+        default:
+            Console.WriteLine("Opção inválida, digite novamente");
             break;
     }
 }
@@ -61,7 +66,7 @@ void RegistarBanda()
     Console.Write("Digite o nome da banda para registrar: ");
     String nomeDaBanda = Console.ReadLine()!;
     Console.WriteLine($"A banda registrada foi: {nomeDaBanda} ");
-    listaDeBandas.Add(nomeDaBanda);
+    bandasRegistradas.Add(nomeDaBanda, new List<int>());
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpcoesDoMenu();
@@ -72,7 +77,7 @@ void MostrarBandasRegistradas()
     Console.Clear();
     ExibirTituloDaOpcao("Exibindo todas as bandas Registradas");
 
-    foreach (var item in listaDeBandas)
+    foreach (var item in bandasRegistradas.Keys)
     {
         Console.WriteLine($"Banda: {item}");
     }
