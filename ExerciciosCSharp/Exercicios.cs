@@ -1,19 +1,29 @@
-﻿//Criar um programa que gerencie o estoque de uma loja. Utilize um dicionário para armazenar produtos e suas quantidades em estoque e mostre, a partir do nome de um produto, sua quantidade em estoque.
+﻿//Crie um programa que implemente um quiz simples de perguntas e respostas. Utilize um dicionário para armazenar as perguntas e as respostas corretas.
 
-Dictionary<string, int> estoque = new Dictionary<string, int>
+Dictionary<string, string> quiz = new Dictionary<string, string>
 {
-    {"Café", 50},
-    {"Carne", 40 },
-    {"Suco", 8 }
+    {"Qual a cor do mar?", "Azul" },
+    {"Qual a cor do café?", "Preto" },
+    {"Quanto é 10 * 2?", "20" }
 };
 
-string produto = Console.ReadLine()!;
+int pontucao = 0;
 
-if (estoque.ContainsKey(produto))
+foreach (var item in quiz)
 {
-    Console.WriteLine($"A quantidade em estoque do produto {produto}: {estoque[produto]} unidades ");
+    Console.WriteLine(item.Key);
+    Console.Write("Insira a resposta: ");
+    string resposta = Console.ReadLine()!;
+
+    if (resposta.ToLower() == item.Value.ToLower())
+    {
+        Console.WriteLine("Resposta correta!");
+        pontucao++;
+    }
+    else
+    {
+        Console.WriteLine($"Errado, a resposta correta é {item.Value}\n");
+    }
 }
-else
-{
-    Console.WriteLine("Produto não encontrado");
-}
+
+Console.WriteLine($"Pontuação final do jogo {pontucao}/{quiz.Count} perguntas.");
