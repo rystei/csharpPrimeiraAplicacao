@@ -1,16 +1,19 @@
-﻿Dictionary<string, List<double>> aluno = new Dictionary<string, List<double>>();
-aluno.Add("Telles", new List<double> {10, 8, 9 });
-aluno.Add("Rystei", new List<double> {10, 8, 9, 1 });
+﻿//Criar um programa que gerencie o estoque de uma loja. Utilize um dicionário para armazenar produtos e suas quantidades em estoque e mostre, a partir do nome de um produto, sua quantidade em estoque.
 
-foreach (var item in aluno)
+Dictionary<string, int> estoque = new Dictionary<string, int>
 {
-    double soma = 0;
+    {"Café", 50},
+    {"Carne", 40 },
+    {"Suco", 8 }
+};
 
-    for (int i = 0; i < item.Value.Count; i++)
-    {
-        soma += item.Value[i];
-    }
+string produto = Console.ReadLine()!;
 
-    double media = soma / item.Value.Count; 
-    Console.WriteLine($"A média do aluno {item.Key} é: {media}");
+if (estoque.ContainsKey(produto))
+{
+    Console.WriteLine($"A quantidade em estoque do produto {produto}: {estoque[produto]} unidades ");
+}
+else
+{
+    Console.WriteLine("Produto não encontrado");
 }
