@@ -126,14 +126,18 @@ void MediaDeUmaBanda()
 {
     Console.Clear();
     ExibirTituloDaOpcao("Visualização da média de uma banda ");
-    Console.WriteLine("Qual o nome da banda que deseja avalidar?");
+    Console.Write("Qual o nome da banda que deseja ver a avaliação: ");
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistradas.ContainsKey(nomeDaBanda))
     {
         List<int> notas = bandasRegistradas[nomeDaBanda];
 
         double media = notas.Average();
-        Console.WriteLine($"A média da banda {nomeDaBanda} é {media}");
+        Console.WriteLine($"A média da banda {nomeDaBanda} é {media}\n");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
     }
     else
     {
